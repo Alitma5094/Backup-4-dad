@@ -3,7 +3,7 @@
 
 A backup program made to replace the one that came with my dad's NAS
 
-**This program is designed for windows but should be easy to port to other platforms**
+**This program is designed for windows but should be easily portable to other platforms**
 
 
 ## Installation
@@ -11,13 +11,13 @@ A backup program made to replace the one that came with my dad's NAS
 Clone the project
 
 ```bash
-  git clone https://link-to-project
+  git clone https://github.com/Alitma5094/Backup-4-dad
 ```
 
 Go to the project directory
 
 ```bash
-  cd my-project
+  cd backup-4-dad
 ```
 
 Install dependencies
@@ -29,13 +29,13 @@ Install dependencies
 Start the program
 
 ```bash
-  python backup4dad\backup4dad.py
+  python backup4dad.py
 ```
 
 Start the program minimized
 
 ```bash
-  python backup4dad\backup4dad.py --nogui
+  python backup4dad.py --nogui
 ```
 
 
