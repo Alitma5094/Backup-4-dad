@@ -16,6 +16,9 @@ global win
 
 
 def insert(data):
+    """
+    Print string to terminal and GUI output window
+    """
     print(data)
     text_output.configure(state="normal")
     text_output.insert(tk.END, data + "\n")
@@ -65,6 +68,9 @@ def zipdir(paths, zip_handler):
 
 
 def start_backup(settings):
+    """
+    Start backup processes
+    """
     zipf = zipfile.ZipFile(settings["temp"], "w", zipfile.ZIP_DEFLATED)
     zipdir(settings["source"], zipf)
     zipf.close()
@@ -72,11 +78,16 @@ def start_backup(settings):
     insert("Copying to final destination")
     current_time = datetime.now()
     current_time = current_time.strftime("%Y-%m-%d")
-    shutil.move(settings["temp"], settings["destination"] + "\\" + current_time + ".zip")
+    shutil.move(
+        settings["temp"], settings["destination"] + "\\" + current_time + ".zip"
+    )
     insert("Backup complete!")
 
 
 def wait_for_time(settings):
+    """
+    Wait
+    """
     while True:
         current_time = datetime.now()
         current_time = current_time.strftime("%w,%I,%p").split(",")
@@ -199,18 +210,25 @@ def main():
     exit_button.grid(row=2, column=1)
     config_button.grid(row=2, column=2)
 
-    # Define a function for quit the window
     def quit_window(icon):
+        """
+        Define a function for quit the window
+        """
         icon.stop()
         win.destroy()
 
-    # Define a function to show the window again
     def show_window(icon):
+        """
+        Define a function to show the window again
+        """
+
         icon.stop()
         win.after(0, win.deiconify())
 
-    # Hide the window and show on the system taskbar
     def hide_window():
+        """
+        Hide the window and show on the system taskbar
+        """
         win.withdraw()
         image = Image.open("resources/backup4dad.ico")
         menu = (MenuItem("Quit", quit_window), MenuItem("Show", show_window))
@@ -233,7 +251,7 @@ def main():
 
 
 # If this program was run (instead of imported), run the program:
-if __name__ == '__main__':
+if __name__ == "__main__":
     try:
         main()
     except KeyboardInterrupt:

@@ -5,6 +5,11 @@ A backup program made to replace the one that came with my dad's NAS
 
 **This program is designed for windows but should be easily portable to other platforms**
 
+## Requirements
+
+- Python 3.9
+- pystray 0.19
+- Pillow 9.0
 
 ## Installation
 
