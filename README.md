@@ -28,7 +28,7 @@ Go to the project directory
 Install dependencies
 
 ```bash
-  pip install requirements.txt
+  pip install -r requirements.txt
 ```
 
 Start the program
